@@ -1,0 +1,32 @@
+.home {
+  background: url('') no-repeat center center fixed;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.home:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #002746;
+  opacity: .5;
+  z-index: -1;
+}
+
+.home-title {
+  color: #fff;
+  font-size: calc(2em + 2vw);
+  font-family: 'GothamPro';
+}

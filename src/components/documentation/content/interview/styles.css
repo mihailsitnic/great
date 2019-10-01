@@ -1,0 +1,51 @@
+.portfolio-title {
+  font-family: 'GothamPro-Bold';
+  font-size: 30px;
+  padding: 25px 0;
+  margin-bottom: 30px;
+  color: #333;
+  border-bottom: 1px solid #d6dadc;
+}
+
+.item {
+  padding: 25px 0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 25px;
+}
+
+.item:last-child {
+  border: none;
+}
+
+.product {
+  padding: 50px 0;
+}
+
+.product-img {
+  width: 275px;
+  height: 200px;
+  border-radius: 60px 45px 100px 15px/15px 30px 45px 60px;
+  object-fit: cover;
+  margin: 16px 0 32px;
+  padding-right: 30px;
+  pointer-events: none;
+}
+
+.product-title {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 25px;
+  font-family: 'GothamPro-Bold';
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.product-description {
+  padding-bottom: 10px;
+}
+
+.product-link {
+  display: inline-block;
+  display: table;
+  margin-bottom: 10px;
+}
