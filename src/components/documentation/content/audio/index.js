@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import './styles.css';
 import CSSTransition from 'react-addons-css-transition-group'
+import './styles.css';
+
 
 class Audio extends Component {
   componentDidUpdate() {

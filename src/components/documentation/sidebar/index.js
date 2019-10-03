@@ -6,29 +6,12 @@ import dataNav from './data'
 import './styles.css';
 
 class Sidebar extends Component {
-  state = {
-    filter: 'alexandermen'
-  }
-
-  handleClick1 = () => {
-    this.setState({
-      filter: 'alexandermen'
-    })
-    localStorage.setItem('test', 'alexandermen');
-  }
-
-  handleClick2 = () => {
-    this.setState({
-      filter: 'seneka'
-    })
-    localStorage.setItem('test', 'seneka');
-  }
 
   renderNavList = () => {
-    const tag = localStorage.getItem('test');
-    const path = this.props.count;
+    const tag = localStorage.getItem('person');
+    const path = this.props.path;
     const dataNavList = dataNav
-    .filter(x => x.tags.indexOf(tag || this.state.filter) > -1)
+    .filter(x => x.tags.indexOf(tag || tag.filter) > -1)
     .map(item =>
         <li className="list__li" key={item.id}>
           <Link
@@ -42,7 +25,9 @@ class Sidebar extends Component {
       </ul>
     )
   }
+
   render() {
+    const { person } = this.props;
     return (
       <Fragment>
         <CSSTransition
@@ -54,11 +39,8 @@ class Sidebar extends Component {
           component = "div"
         >
         <nav>
-          <h3 className="logo">Александр Мень</h3>
+          <h3 className="logo">{person}</h3>
           {this.renderNavList()}
-          <button onClick={this.handleClick1}>text 1</button>
-          <br />
-          <button onClick={this.handleClick2}>text 2</button>
         </nav>
       </CSSTransition>
       </Fragment>
@@ -67,7 +49,8 @@ class Sidebar extends Component {
 }
 
 const mapStateToProps = state => ({
-  count: state.currentPath
+  path: state.currentPath,
+  person: state.personName,
 })
 
 export default connect(mapStateToProps)(Sidebar)

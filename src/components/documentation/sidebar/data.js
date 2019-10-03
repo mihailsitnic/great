@@ -1,26 +1,20 @@
 const dataNav = [
   {
-    id: 0,
+    id: 1,
     path: 'meet',
     text: 'Знакомство',
     tags: ['alexandermen', 'seneka']
   },
   {
-    id: 1,
-    path: 'photo',
-    text: 'Фото',
-    tags: ['alexandermen']
-  },
-  {
     id: 2,
-    path: 'video',
-    text: 'Видео',
+    path: 'audio',
+    text: 'Аудио',
     tags: ['alexandermen']
   },
   {
     id: 3,
-    path: 'audio',
-    text: 'Аудио',
+    path: 'video',
+    text: 'Видео',
     tags: ['alexandermen']
   },
   {
