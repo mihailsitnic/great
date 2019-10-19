@@ -22,16 +22,22 @@
   padding: 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 b {
   font-family: 'GothamPro-Bold';
 }
 
-p, li {
+p {
   font-family: 'GothamPro';
+  line-height: 2;
+  padding-bottom: 1em;
 }
 
-ul, ol {
-  padding-top: 15px;
+li {
+  font-family: 'GothamPro';
 }
 
 .link {
@@ -64,8 +70,8 @@ code {
   flex-wrap: wrap;
 }
 
-.col-6 {
-  flex: 0 0 50%;
+.col {
+  flex-grow: 1;
 }
 
 .header {
@@ -92,24 +98,28 @@ code {
   font-family: 'GothamPro-Bold';
   font-size: 40px;
   color: #333;
+  line-height: 3;
 }
 
 .title-h2 {
   font-family: 'GothamPro-Bold';
   font-size: 30px;
   color: #333;
+  line-height: 2;
 }
 
 .title-h3 {
   font-family: 'GothamPro-Bold';
   font-size: 25px;
   color: #333;
+  line-height: 2;
 }
 
 .title-h4 {
   font-family: 'GothamPro-Bold';
   font-size: 20px;
   color: #333;
+  padding-bottom: 15px;
 }
 
 .article {
@@ -143,9 +153,6 @@ code {
   transition: opacity 300ms ease-in;
 }
 
-
-
-
 .paper {
   padding: 50px 0;
 }
@@ -156,43 +163,3 @@ code {
   font-weight: 500;
   line-height: 30px;
 }
-
-/* .paper__ol {
-  padding-bottom: 30px;
-  margin-left: 50px;
-}
-
-.paper__li {
-  padding: 10px 0;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  font-family: 'GothamPro-Bold';
-}
-
-.table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.table,
-.table__tr,
-.table__th,
-.table__td {
-  border: 1px solid #ddd;
-  text-align: left;
-  padding: 15px;
-  color: #999;
-  font-size: 16px;
-  text-align: center;
-}
-
-.table__span {
-  font-size: 10px;
-  font-family: 'GothamPro-Bold';
-  background: #eee;
-  display: inline-block;
-  padding: 5px;
-  margin-top: 5px;
-  border-radius: 5px;
-} */

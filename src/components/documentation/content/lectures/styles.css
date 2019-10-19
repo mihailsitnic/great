@@ -1,8 +1,0 @@
-.task-list {
-  padding-bottom: 25px;
-  margin-left: 50px;
-}
-
-.task-list > .task-list {
-  padding: 0;
-}

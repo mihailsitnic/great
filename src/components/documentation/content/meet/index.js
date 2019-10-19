@@ -25,11 +25,22 @@ class Meet extends Component {
               <h1 className="header-title">Знакомство</h1>
             </div>
           </header>
-          <nav className="nav-expenses row">
-            <span className="nav-expenses__min col-6 --active">Минимум</span>
-            <span
-              className="nav-expenses__max col-6">Максимум</span>
-          </nav>
+          <section className="paper">
+          <div className="wrapper">
+            <article className="article">
+              <h4 className="title-h4">Беседа о любви</h4>
+              <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/28URJrqur1Q"
+                  frameBorder="0"
+                  title="Беседа о любви"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+              />
+            </article>
+          </div>
+        </section>
         </div>
         </CSSTransition>
       </Fragment>

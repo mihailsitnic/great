@@ -1,0 +1,17 @@
+.video__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.video__li {
+    margin-bottom: 2em;
+    padding-bottom: 3em;
+    border-bottom: 1px solid #bdbdbd;
+}
+
+.video__li:last-child {
+    margin: 0;
+    padding: 0;
+    border: none;
+}

@@ -18,7 +18,7 @@ class Audio extends Component {
           transitionAppearTimeout = {1000}
           component = "div"
         >
-        <div>
+        <section className="pagination-section">
           <header className="header">
             <div className="wrapper">
               <h1 className="header-title">Аудио</h1>
@@ -27,12 +27,16 @@ class Audio extends Component {
           <section className="paper">
             <div className="wrapper">
               <article className="article">
-                <p className="paper__text">lorem</p>
+                <p>Аудио</p>
               </article>
-              
             </div>
           </section>
-        </div>
+          <nav className="nav-expenses row">
+            <span className="nav-expenses__min col-6 --active">Минимум</span>
+            <span
+              className="nav-expenses__max col-6">Максимум</span>
+          </nav>
+        </section>
         </CSSTransition>
       </Fragment>
     );
