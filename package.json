@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.8.4",
     "react-addons-css-transition-group": "^15.6.2",
+    "react-audioplaylist": "^1.0.8",
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.8.4",
     "react-id-swiper": "^2.1.0",

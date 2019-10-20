@@ -7,14 +7,14 @@ const dataNav = [
   },
   {
     id: 2,
-    path: 'audio',
-    text: 'Аудио',
+    path: 'video',
+    text: 'Видео',
     tags: ['alexandermen']
   },
   {
     id: 3,
-    path: 'video',
-    text: 'Видео',
+    path: 'audio',
+    text: 'Аудио',
     tags: ['alexandermen']
   },
   {

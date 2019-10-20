@@ -28,16 +28,10 @@ class Meet extends Component {
           <section className="paper">
           <div className="wrapper">
             <article className="article">
-              <h4 className="title-h4">Беседа о любви</h4>
-              <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/28URJrqur1Q"
-                  frameBorder="0"
-                  title="Беседа о любви"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-              />
+              <blockquote className="blockquote" cite="http://www.alexandrmen.ru/">
+                <p className="blockquote__p">Я просто верю, что истина у Бога и она превосходит мое понимание и она прекрасна. Мне лично этого достаточно.</p>
+                <footer className="blockquote__footer">—Александр Мень, <cite className="blockquote__cite">Из письма к Ю.Н.Рейтлингер</cite></footer>
+            </blockquote>
             </article>
           </div>
         </section>

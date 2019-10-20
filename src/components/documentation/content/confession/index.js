@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import CSSTransition from 'react-addons-css-transition-group'
+import AudioPlayer from 'react-audioplaylist'
+import tracks from './data'
 import './styles.css';
 
 class Design extends Component {
@@ -26,7 +28,7 @@ class Design extends Component {
             <section className="paper">
               <div className="wrapper">
                 <article className="article">
-                  <p className="paper__text">Lorem</p>
+                  <AudioPlayer data={{tracks}} />
                 </article>
               </div>
             </section>

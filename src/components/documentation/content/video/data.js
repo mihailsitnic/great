@@ -1,5 +1,15 @@
 const video = [
     {
+        url: 'Tvtxm6uvO7M',
+        title: 'Все только начинается',
+        id: Math.random()
+    },
+    {
+        url: '0uulmGTO86w',
+        title: 'Беседа в музыкальной школе г. Пушкино',
+        id: Math.random()
+    },
+    {
         url: 'ScPH6in46mU',
         title: 'Два пути понимания христианства',
         id: Math.random()
@@ -7,6 +17,11 @@ const video = [
     {
         url: 'AqTifyVOap0',
         title: 'О Духовности',
+        id: Math.random()
+    },
+    {
+        url: 'oJYh0PBIUtA',
+        title: 'Вечер памяти Бердяева',
         id: Math.random()
     },
     {
@@ -40,11 +55,6 @@ const video = [
         id: Math.random()
     },
     {
-        url: '0uulmGTO86w',
-        title: 'Беседа в музыкальной школе г. Пушкино',
-        id: Math.random()
-    },
-    {
         url: 'x_S6SXXcXpE',
         title: 'Слово о Библии',
         id: Math.random()
@@ -67,11 +77,6 @@ const video = [
     {
         url: 'acchO2_mx_A',
         title: 'Слово на открытии музыкальной школы в Пушкино',
-        id: Math.random()
-    },
-    {
-        url: 'Tvtxm6uvO7M',
-        title: 'Все только начинается',
         id: Math.random()
     },
     {
@@ -127,11 +132,6 @@ const video = [
     {
         url: 'IHpbhZLGshI',
         title: 'Выступление на вечере Т. Жирмунской',
-        id: Math.random()
-    },
-    {
-        url: 'oJYh0PBIUtA',
-        title: 'Вечер памяти Бердяева',
         id: Math.random()
     },
     {

@@ -1,0 +1,21 @@
+.blockquote {
+    margin: 0;
+}
+
+.blockquote__p {
+    background: #edeff0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.blockquote__footer {
+    padding: 20px 0;
+}
+
+.blockquote p::before {
+    content: '\201C';
+}
+
+.blockquote p::after {
+    content: '\201D';
+}

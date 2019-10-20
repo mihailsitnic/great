@@ -1,0 +1,47 @@
+.styles_wrapper__3KXDn {
+    margin: 0;
+}
+
+.styles_track__CJoet {
+    background: #FAFAFA;
+}
+
+.styles_trackMeta__2fLCg h1 {
+    font-size: 1rem;
+    word-break: break-word;
+    text-align: start;
+    text-transform: inherit;
+}
+
+.styles_trackMeta__2fLCg h1 span {
+    display: none;
+}
+
+.styles_trackMeta__2fLCg h1 span:first-child {
+    display: block;
+    color: #586573;
+    line-height: 1.5;
+}
+
+.styles_playlist__kvJYW {
+    background: transparent;
+}
+
+.styles_playlistTrack__2jzCn {
+    background: #fff !important;
+    color: #586573;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-bottom: 1px solid #ebf0f2;
+}
+
+.styles_playlistTrack__2jzCn:hover {
+    background: #fff !important;
+    color: #4285f4;
+    transition: .2s;
+}
+
+.styles_playlistIcon__3zMzn {
+    margin-top: -3.5rem;
+    margin-bottom: 1rem;
+}
