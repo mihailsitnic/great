@@ -1,13 +1,32 @@
 import React, { Component, Fragment } from 'react';
 import CSSTransition from 'react-addons-css-transition-group'
+import { Link } from 'react-router-dom';
+import Player1 from './01'
+import Player2 from './02'
+import pagination from './pagination'
 import './styles.css';
 
-
 class Audio extends Component {
-  componentDidUpdate() {
-    window.scrollTo(0, 0)
+  state = {
+    pageId: 'a'
   }
+
+  setPage = id => this.setState({ pageId: id })
+
   render() {
+    const { pageId } = this.state
+    const audioPlayer_1 = pageId === 'a' && <Player1 />
+    const audioPlayer_2 = pageId === 'b' && <Player2 />
+    const paginationNav = pagination.map(item =>
+      <li className="pagination__li col" key={item.id}>
+        <Link
+          className="pagination__link"
+          to={item.path}
+          onClick={() => this.setPage(item.pageId)}>
+            {item.number}
+          </Link>
+      </li>
+    )
     return (
       <Fragment>
         <CSSTransition
@@ -27,14 +46,15 @@ class Audio extends Component {
           <section className="paper">
             <div className="wrapper">
               <article className="article">
-                <p>Аудио</p>
+                {audioPlayer_1}
+                {audioPlayer_2}
               </article>
             </div>
           </section>
           <nav className="nav-expenses row">
-            <span className="nav-expenses__min col-6 --active">Минимум</span>
-            <span
-              className="nav-expenses__max col-6">Максимум</span>
+            <ul className="pagination__list row">
+              {paginationNav}
+            </ul>
           </nav>
         </section>
         </CSSTransition>

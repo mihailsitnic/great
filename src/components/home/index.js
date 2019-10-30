@@ -1,14 +1,128 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'
+import { selectorName } from 'redux/AC'
+import nav from './dataNav'
 import './styles.css';
 
 class Home extends Component {
+  state = {
+    selected: null,
+    ul: false,
+    li: false
+  }
+  handleLiOver = item => {
+    this.setState({
+      selected: item.id,
+      li: true
+    })
+  }
+  handleLiOut = () => {
+    this.setState({
+      selected: null
+    })
+  }
+  handleUlOver = () => {
+    this.setState({
+      ul: true
+    })
+  }
+  handleUlLeave = () => {
+    this.setState({
+      ul: false,
+      li: false
+    })
+  }
+  handleSelector = item => {
+    const obj = {
+      selector: item.selector,
+      logoName: item.linkTitle,
+      switch: item.switch,
+      id: item.id
+    }
+    localStorage.setItem('storage', JSON.stringify(obj))
+    const action = selectorName(item.linkTitle)
+    this.props.dispatch(action)
+  }
   render() {
+    const {ul, li} = this.state
+    const nomeNavigation = nav.map((item, id) =>
+      <li
+        className={`home-nav__li ${this.state.selected === id ? '--selected' : ''}`}
+        onMouseOver={this.handleLiOver.bind(this, item)}
+        onMouseLeave={this.handleLiOut.bind(this, item)}
+        key={item.id}
+        >
+        <div className="home-nav__container">
+          <img
+            className="home-nav__img"
+            src={item.img}
+            alt={item.linkTitle}
+          />
+        </div>
+        <Link
+          onClick={this.handleSelector.bind(this, item)}
+          className="home-nav__link-title"
+          to={item.linkTo}
+        >
+          {item.linkTitle}
+          </Link>
+        <div className="home-nav__details">
+          <p className="home-nav__text">{item.text}</p>
+          <p className="home-nav__tags">{item.tags}</p>
+          <Link
+            onClick={this.handleSelector.bind(this, item)}
+            className="home-nav__link"
+            to={item.linkTo}
+          >
+            {item.linkText}
+          </Link>
+        </div>
+      </li>
+    )
     return (
       <section className="home">
-        <h1 className="home-title">Under Construction</h1>
+        <header className="home-header">
+          <div className="home-wrap">
+            <h1 className="home-logo">Positron Solo</h1>
+          </div>
+        </header>
+        <div className="home-wrap">
+          
+          <div className="row">
+            <div className="col-3">
+              <p>В свое время Бейли читал об этом. Он слышал, как многие выражали недовольство изобретением атомного реактора. Он и сам сетовал на это, когда уставал или когда что-то не ладилось. Человек всегда чем-то недоволен. В угольном веке люди ворчали по поводу изобретения парового двигателя. В одной из пьес Шекспира герой возмущался тем, что кто-то изобрел порох. А через тысячу лет найдутся такие, что будут недовольны изобретением позитронного мозга.</p>
+              <p>Ни один из существующих роботов ни при каких обстоятельствах не мог повредить человеческому существу. В этом заключался Первый Закон Роботехники: «Роботу запрещается причинять вред человеческому существу как действием, так и бездействием». Не было ни одного случая, чтобы позитронный мозг построили без этого запрета, заложенного так глубоко в его базовые цепи, что ни одно мыслимое повреждение не могло разрушить его.</p>
+            </div>
+          </div>
+          
+          <nav
+            className={`home-nav
+            ${ul ? '--ul-active' : ''}
+            ${li ? '--li-active' : ''}`}
+          >
+            <p className="advertis">Advertising</p>
+            <ul
+              className="home-nav-list"
+              onMouseOver={this.handleUlOver}
+              onMouseLeave={this.handleUlLeave}
+            >
+              {nomeNavigation}
+            </ul>
+          </nav>
+
+          <div className="row">
+              <div className="col-3">
+                <p>– Если вы имеете хоть какое-то представление о роботехнике, мистер Бейли, то должны знать, какую гигантскую работу нужно проделать математикам и электронщикам, чтобы создать позитронный мозг.</p>
+                <p>Какая ирония судьбы! Именно на Земле изобрели позитронный мозг, и именно на Земле роботов впервые стали использовать на производстве. На Земле, а не на Внешних Мирах. Хотя Внешние Миры всегда вели себя так, будто роботы были порождением их цивилизации.</p>
+                <p>Он хорошо помнил, как однажды по долгу службы ему пришлось посетить завод по производству роботов. Он видел заводскую книгофильмотеку. Она состояла из длинных книгофильмов, каждый из которых содержал математический анализ какого-нибудь одного типа позитронного мозга. Несмотря на сжатость изложения, в среднем требовалось более часа, чтобы просмотреть один такой фильм. И хотя каждый мозг изготавливали в соответствии со строго заданными неизменными техническими параметрами, невозможно было отыскать ни одной пары одинаковых мозговых систем. Это, как понял Бейли, являлось следствием действия принципа неопределенностей Гейзенберга. Поэтому каждый фильм снабжался приложениями, включающими возможные варианты. Да, эта работа была не из легких. Бейли и не собирался этого отрицать.</p>
+              </div>
+            </div>
+
+        </div>
       </section>
     );
   }
 }
 
-export default Home;
+export default connect()(Home)

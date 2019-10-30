@@ -1,12 +1,11 @@
 import React, { useState, useEffect, Fragment } from 'react';
+import { connect } from 'react-redux'
 import CSSTransition from 'react-addons-css-transition-group';
-import Posts from '../posts';
+import Posts from './posts';
 import Pagination from '../pagination';
-import video from './data';
 import './styles.css';
 
-
-const VideoComponent = () => {
+const VideoComponent = props => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -15,7 +14,7 @@ const VideoComponent = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      setPosts(video);
+      setPosts(props.data.a.video);
       setLoading(false);
     };
 
@@ -58,6 +57,7 @@ const VideoComponent = () => {
           totalPosts={posts.length}
           paginate={paginate}
           currentPage={currentPage}
+          path={props.match.path}
         />
       </section>
       </CSSTransition>
@@ -66,4 +66,9 @@ const VideoComponent = () => {
   );
 };
 
-export default VideoComponent;
+const mapStateToProps = state => ({
+  data: state.selectorData,
+  path: state.currentPath
+})
+
+export default connect(mapStateToProps)(VideoComponent)

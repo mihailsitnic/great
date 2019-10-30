@@ -6,17 +6,14 @@
     "react": "^16.8.4",
     "react-addons-css-transition-group": "^15.6.2",
     "react-audioplaylist": "^1.0.8",
-    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.8.4",
-    "react-id-swiper": "^2.1.0",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",
-    "redux": "^4.0.1",
-    "swiper": "^4.5.0"
+    "redux": "^4.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_PATH=src/ react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

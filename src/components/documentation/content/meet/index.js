@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import CSSTransition from 'react-addons-css-transition-group'
+import { connect } from 'react-redux'
 import './styles.css';
 
 class Meet extends Component {
@@ -9,6 +10,11 @@ class Meet extends Component {
   }
 
   render() {
+    const id = JSON.parse(localStorage.getItem('storage')).id;
+    const meet = this.props.data;
+    const key = Object.keys(meet)[id];
+    const value = meet[key]
+
     return (
       <Fragment>
         <CSSTransition
@@ -28,9 +34,21 @@ class Meet extends Component {
           <section className="paper">
           <div className="wrapper">
             <article className="article">
-              <blockquote className="blockquote" cite="http://www.alexandrmen.ru/">
-                <p className="blockquote__p">Я просто верю, что истина у Бога и она превосходит мое понимание и она прекрасна. Мне лично этого достаточно.</p>
-                <footer className="blockquote__footer">—Александр Мень, <cite className="blockquote__cite">Из письма к Ю.Н.Рейтлингер</cite></footer>
+              <blockquote
+                className="blockquote"
+                cite={value.meet.blockquoteUrl}
+              >
+                <p
+                  className="blockquote__p">
+                    {value.meet.blockquoteParagraph}
+                  </p>
+                <footer
+                  className="blockquote__footer">
+                    {value.meet.blockquoteFooter}
+                    <cite className="blockquote__cite">
+                      {value.meet.blockquoteCite}
+                    </cite>
+                  </footer>
             </blockquote>
             </article>
           </div>
@@ -42,5 +60,9 @@ class Meet extends Component {
   }
 }
 
-export default Meet;
+const mapStateToProps = state => ({
+  data: state.selectorData
+})
+
+export default connect(mapStateToProps)(Meet)
 

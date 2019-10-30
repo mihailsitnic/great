@@ -1,5 +1,5 @@
-import { PATH } from '../constants'
+import { MATCH_PATH } from '../constants'
 
-export default (path = '/docs', action) => {
-    return action.type === PATH ? action.payload : path
+export default (path = '/', action) => {
+    return action.type === MATCH_PATH ? action.payload : path
 }

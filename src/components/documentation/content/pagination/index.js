@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
 
-const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
+const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage, path }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
@@ -16,7 +16,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
           <li key={number} className='pagination__li col'>
             <Link
                 onClick={() => paginate(number)}
-                to="/video"
+                to={path}
                 className={`pagination__link ${currentPage === number ? 'pagination__link--active' : ''}`}
             >
               {number}

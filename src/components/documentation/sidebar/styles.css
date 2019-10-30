@@ -17,6 +17,12 @@
   padding: 10px 0;
 }
 
+.list__li:last-child {
+  font-family: 'GothamPro-Bold';
+  border-top: 1px solid #e2e4e6;
+  margin-top: 20px;
+}
+
 .list__link {
   font-size: 14px;
   color: #333;

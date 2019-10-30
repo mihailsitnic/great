@@ -48,8 +48,6 @@ li {
 
 body {
   font-family: 'GothamPro', 'Open Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
@@ -72,6 +70,18 @@ code {
 
 .col {
   flex-grow: 1;
+}
+
+.col-3 {
+  flex: 0 0 25%;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+}
+
+.col-9 {
+  flex: 0 0 75%;
 }
 
 .header {

@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux'
 import pathReducer from './path'
-import personReducer from './person'
+import locationReducer from './location'
+import selectorReducer from './selector'
+import dataReducer from './data'
 
 export default combineReducers({
     currentPath: pathReducer,
-    personName: personReducer
+    currentLocation: locationReducer,
+    selectorName: selectorReducer,
+    selectorData: dataReducer
 })

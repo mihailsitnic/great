@@ -7,27 +7,41 @@ import './styles.css';
 
 class Sidebar extends Component {
 
+  handleExit = () => {
+    localStorage.setItem('storage', null)
+  }
+
   renderNavList = () => {
-    const tag = localStorage.getItem('person');
-    const path = this.props.path;
+    const tag = JSON.parse(localStorage.getItem('storage')).selector;
+    const path = `/${this.props.path}/`;
     const dataNavList = dataNav
     .filter(x => x.tags.indexOf(tag || tag.filter) > -1)
     .map(item =>
         <li className="list__li" key={item.id}>
           <Link
-            className={`list__link ${item.path === path ? 'list__link--active' : ''}`}
-            to={item.path}>{item.text}</Link>
+            className={`list__link ${path + item.path === this.props.location ? 'list__link--active' : ''}`}
+            to={item.path}>
+            {item.text}
+          </Link>
         </li>
       )
     return (
       <ul className="list">
         {dataNavList}
+        <li className="list__li">
+          <Link
+            onClick={this.handleExit}
+            className="list__link"
+            to="/">
+            Выйти
+          </Link>
+        </li>
       </ul>
     )
   }
 
   render() {
-    const { person } = this.props;
+    const logoName = JSON.parse(localStorage.getItem('storage')).logoName;
     return (
       <Fragment>
         <CSSTransition
@@ -39,7 +53,7 @@ class Sidebar extends Component {
           component = "div"
         >
         <nav>
-          <h3 className="logo">{person}</h3>
+          <h3 className="logo">{logoName}</h3>
           {this.renderNavList()}
         </nav>
       </CSSTransition>
@@ -50,7 +64,7 @@ class Sidebar extends Component {
 
 const mapStateToProps = state => ({
   path: state.currentPath,
-  person: state.personName,
+  location: state.currentLocation
 })
 
 export default connect(mapStateToProps)(Sidebar)
