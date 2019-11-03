@@ -6,18 +6,31 @@ import dData from 'data/d'
 
 const globalObject = {
     a: {
+        id: aData.id,
+        author: aData.author,
+        selector: aData.selector,
         meet: aData.meet,
         audio: aData.audio,
         video: aData.video,
         books: aData.books
     },
     b: {
+        id: bData.id,
+        author: bData.author,
+        selector: bData.selector,
         meet: bData.meet,
+        audio: bData.audio,
     },
     c: {
+        id: cData.id,
+        author: cData.author,
+        selector: cData.selector,
         meet: cData.meet,
     },
     d: {
+        id: dData.id,
+        author: dData.author,
+        selector: dData.selector,
         meet: dData.meet,
     },
 }

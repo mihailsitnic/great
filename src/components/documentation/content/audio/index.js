@@ -1,66 +1,97 @@
-import React, { Component, Fragment } from 'react';
-import CSSTransition from 'react-addons-css-transition-group'
-import { Link } from 'react-router-dom';
-import Player1 from './01'
-import Player2 from './02'
-import pagination from './pagination'
+import React, { useState, useEffect, Fragment } from 'react';
+import { connect } from 'react-redux'
+import CSSTransition from 'react-addons-css-transition-group';
+import Posts from './posts';
+import Pagination from '../pagination';
 import './styles.css';
 
-class Audio extends Component {
-  state = {
-    pageId: 'a'
+const Audio = props => {
+
+  let id
+  switch (props.path) {
+    case "a":
+      id = 0;
+      break;
+    case "b":
+      id = 1;
+      break;
+    case "c":
+      id = 2;
+      break;
+    case "d":
+      id = 3;
+      break;
+    default:
+      id = 0;
   }
 
-  setPage = id => this.setState({ pageId: id })
+  const meet = props.data;
+  const key = Object.keys(meet)[id];
+  const value = meet[key]
 
-  render() {
-    const { pageId } = this.state
-    const audioPlayer_1 = pageId === 'a' && <Player1 />
-    const audioPlayer_2 = pageId === 'b' && <Player2 />
-    const paginationNav = pagination.map(item =>
-      <li className="pagination__li col" key={item.id}>
-        <Link
-          className="pagination__link"
-          to={item.path}
-          onClick={() => this.setPage(item.pageId)}>
-            {item.number}
-          </Link>
-      </li>
-    )
-    return (
-      <Fragment>
-        <CSSTransition
-          transitionName = "article"
-          transitionAppear
-          transitionEnterTimeout = {1000}
-          transitionLeaveTimeout = {1000}
-          transitionAppearTimeout = {1000}
-          component = "div"
-        >
-        <section className="pagination-section">
-          <header className="header">
-            <div className="wrapper">
-              <h1 className="header-title">Аудио</h1>
-            </div>
-          </header>
-          <section className="paper">
-            <div className="wrapper">
-              <article className="article">
-                {audioPlayer_1}
-                {audioPlayer_2}
-              </article>
-            </div>
-          </section>
-          <nav className="nav-expenses row">
-            <ul className="pagination__list row">
-              {paginationNav}
-            </ul>
-          </nav>
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(1);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      setPosts(value.audio);
+      setLoading(false);
+    };
+
+    fetchPosts();
+  }, []);
+
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
+  return (
+    <Fragment>
+      <CSSTransition
+        transitionName = "article"
+        transitionAppear
+        transitionEnterTimeout = {1000}
+        transitionLeaveTimeout = {1000}
+        transitionAppearTimeout = {1000}
+        component = "div"
+      >
+      <section className="pagination-section">
+        <header className="header">
+          <div className="wrapper">
+            <h1 className="header-title">Аудио</h1>
+          </div>
+        </header>
+        <section className="paper">
+          <div className="wrapper">
+            <article className="article">
+            <Posts posts={currentPosts} loading={loading} />
+            </article>
+          </div>
         </section>
-        </CSSTransition>
-      </Fragment>
-    );
-  }
-}
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={posts.length}
+          paginate={paginate}
+          currentPage={currentPage}
+          path={props.match.path}
+        />
+      </section>
+      </CSSTransition>
+      
+    </Fragment>
+  );
+};
 
-export default Audio;
+const mapStateToProps = state => ({
+  data: state.selectorData,
+  path: state.currentPath
+})
+
+export default connect(mapStateToProps)(Audio)

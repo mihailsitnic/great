@@ -18,7 +18,6 @@ class App extends Component {
       const locationAction = locationPath(location.pathname)
       this.props.dispatch(matchAction)
       this.props.dispatch(locationAction)
-      console.log('matchAction = ', matchAction.payload)
       return <div />
     }
 

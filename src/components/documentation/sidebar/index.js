@@ -7,13 +7,30 @@ import './styles.css';
 
 class Sidebar extends Component {
 
-  handleExit = () => {
-    localStorage.setItem('storage', null)
-  }
-
   renderNavList = () => {
-    const tag = JSON.parse(localStorage.getItem('storage')).selector;
+    let id
+    switch (this.props.path) {
+      case "a":
+        id = 0;
+        break;
+      case "b":
+        id = 1;
+        break;
+      case "c":
+        id = 2;
+        break;
+      case "d":
+        id = 3;
+        break;
+      default:
+        id = 0;
+    }
+    const meet = this.props.data;
+    const key = Object.keys(meet)[id];
+    const value = meet[key]
+    const tag = value.selector;
     const path = `/${this.props.path}/`;
+
     const dataNavList = dataNav
     .filter(x => x.tags.indexOf(tag || tag.filter) > -1)
     .map(item =>
@@ -25,23 +42,36 @@ class Sidebar extends Component {
           </Link>
         </li>
       )
+      
     return (
       <ul className="list">
         {dataNavList}
-        <li className="list__li">
-          <Link
-            onClick={this.handleExit}
-            className="list__link"
-            to="/">
-            Выйти
-          </Link>
-        </li>
       </ul>
     )
   }
 
   render() {
-    const logoName = JSON.parse(localStorage.getItem('storage')).logoName;
+    let id
+    switch (this.props.path) {
+      case "a":
+        id = 0;
+        break;
+      case "b":
+        id = 1;
+        break;
+      case "c":
+        id = 2;
+        break;
+      case "d":
+        id = 3;
+        break;
+      default:
+        id = 0;
+    }
+    const meet = this.props.data;
+    const key = Object.keys(meet)[id];
+    const value = meet[key]
+    const logoName = value.author
     return (
       <Fragment>
         <CSSTransition
@@ -64,7 +94,8 @@ class Sidebar extends Component {
 
 const mapStateToProps = state => ({
   path: state.currentPath,
-  location: state.currentLocation
+  location: state.currentLocation,
+  data: state.selectorData,
 })
 
 export default connect(mapStateToProps)(Sidebar)

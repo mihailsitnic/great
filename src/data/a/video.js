@@ -20,8 +20,8 @@ const video = [
         id: Math.random()
     },
     {
-        url: 'tZPGpMQD7-w',
-        title: 'Литургия на Крестовоздвижение',
+        url: 'HpkoqVJafIc',
+        title: 'Беседа о педагогике',
         id: Math.random()
     },
     {
@@ -57,11 +57,6 @@ const video = [
     {
         url: 'x_S6SXXcXpE',
         title: 'Слово о Библии',
-        id: Math.random()
-    },
-    {
-        url: 'HpkoqVJafIc',
-        title: 'Беседа о педагогике',
         id: Math.random()
     },
     {

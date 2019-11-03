@@ -42,7 +42,7 @@ const Books = props => {
       <section className="pagination-section">
         <header className="header">
           <div className="wrapper">
-            <h1 className="header-title">Видео</h1>
+            <h1 className="header-title">Книги</h1>
           </div>
         </header>
         <section className="paper">

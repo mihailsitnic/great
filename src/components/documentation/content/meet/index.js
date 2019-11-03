@@ -10,7 +10,24 @@ class Meet extends Component {
   }
 
   render() {
-    const id = JSON.parse(localStorage.getItem('storage')).id;
+
+    let id
+    switch (this.props.path) {
+      case "a":
+        id = 0;
+        break;
+      case "b":
+        id = 1;
+        break;
+      case "c":
+        id = 2;
+        break;
+      case "d":
+        id = 3;
+        break;
+      default:
+        id = 0;
+    }
     const meet = this.props.data;
     const key = Object.keys(meet)[id];
     const value = meet[key]
@@ -61,7 +78,8 @@ class Meet extends Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.selectorData
+  data: state.selectorData,
+  path: state.currentPath
 })
 
 export default connect(mapStateToProps)(Meet)
