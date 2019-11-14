@@ -11,7 +11,10 @@ const Posts = ({ posts, loading }) => {
       {posts.map(item => (
         <li key={item.id} className="audio__li">
             <h3 className="title-h3">{item.title}</h3>
-            <Player tracks={item.player} key={item.id} />
+            <Player
+              tracks={item.player}
+              key={item.id}
+            />
         </li>
       ))}
     </ul>

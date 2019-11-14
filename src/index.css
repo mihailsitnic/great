@@ -123,16 +123,17 @@ code {
 }
 
 .title-h3 {
-  font-family: 'GothamPro-Bold';
+  font-family: 'GothamPro';
   font-size: 25px;
   color: #333;
   line-height: 2;
 }
 
 .title-h4 {
-  font-family: 'GothamPro-Bold';
+  font-family: 'GothamPro';
   font-size: 20px;
   color: #333;
+  line-height: 1.5;
   padding-bottom: 15px;
 }
 

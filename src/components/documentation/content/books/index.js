@@ -6,6 +6,8 @@ import Pagination from '../pagination';
 import './styles.css';
 
 const Books = props => {
+  const value = props.data[props.match.params.path]
+
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -14,7 +16,7 @@ const Books = props => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      setPosts(props.data.a.books);
+      setPosts(value.books);
       setLoading(false);
     };
 
@@ -67,8 +69,7 @@ const Books = props => {
 };
 
 const mapStateToProps = state => ({
-  data: state.selectorData,
-  path: state.currentPath
+  data: state.selectorData
 })
 
 export default connect(mapStateToProps)(Books)

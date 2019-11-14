@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux'
-import pathReducer from './path'
-import locationReducer from './location'
 import selectorReducer from './selector'
 import dataReducer from './data'
+import audioReducer from './audio'
 
 export default combineReducers({
-    currentPath: pathReducer,
-    currentLocation: locationReducer,
     selectorName: selectorReducer,
-    selectorData: dataReducer
+    selectorData: dataReducer,
+    audioPage: audioReducer
 })

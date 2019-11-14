@@ -6,28 +6,7 @@ import Pagination from '../pagination';
 import './styles.css';
 
 const Audio = props => {
-
-  let id
-  switch (props.path) {
-    case "a":
-      id = 0;
-      break;
-    case "b":
-      id = 1;
-      break;
-    case "c":
-      id = 2;
-      break;
-    case "d":
-      id = 3;
-      break;
-    default:
-      id = 0;
-  }
-
-  const meet = props.data;
-  const key = Object.keys(meet)[id];
-  const value = meet[key]
+  const value = props.data[props.match.params.path]
 
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -90,8 +69,7 @@ const Audio = props => {
 };
 
 const mapStateToProps = state => ({
-  data: state.selectorData,
-  path: state.currentPath
+  data: state.selectorData
 })
 
 export default connect(mapStateToProps)(Audio)

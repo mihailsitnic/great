@@ -4,33 +4,9 @@ import { connect } from 'react-redux'
 import './styles.css';
 
 class Meet extends Component {
-
-  componentDidUpdate() {
-    window.scrollTo(0, 0)
-  }
-
+  
   render() {
-
-    let id
-    switch (this.props.path) {
-      case "a":
-        id = 0;
-        break;
-      case "b":
-        id = 1;
-        break;
-      case "c":
-        id = 2;
-        break;
-      case "d":
-        id = 3;
-        break;
-      default:
-        id = 0;
-    }
-    const meet = this.props.data;
-    const key = Object.keys(meet)[id];
-    const value = meet[key]
+    const value = this.props.data[this.props.match.params.path]
 
     return (
       <Fragment>
@@ -78,8 +54,7 @@ class Meet extends Component {
 }
 
 const mapStateToProps = state => ({
-  data: state.selectorData,
-  path: state.currentPath
+  data: state.selectorData
 })
 
 export default connect(mapStateToProps)(Meet)

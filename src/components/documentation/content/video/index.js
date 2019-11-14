@@ -6,6 +6,11 @@ import Pagination from '../pagination';
 import './styles.css';
 
 const VideoComponent = props => {
+  const value = props.data[props.match.params.path]
+
+  // console.log('this.props.data[this.props.match.params.path] = ', props.data[props.match.params.path])
+  // console.log('this.props.match.params === ', props.match.params)
+
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -14,7 +19,7 @@ const VideoComponent = props => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      setPosts(props.data.a.video);
+      setPosts(value.video);
       setLoading(false);
     };
 
@@ -67,8 +72,7 @@ const VideoComponent = props => {
 };
 
 const mapStateToProps = state => ({
-  data: state.selectorData,
-  path: state.currentPath
+  data: state.selectorData
 })
 
 export default connect(mapStateToProps)(VideoComponent)

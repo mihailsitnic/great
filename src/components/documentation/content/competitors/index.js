@@ -3,9 +3,7 @@ import CSSTransition from 'react-addons-css-transition-group'
 import './styles.css';
 
 class Competitors extends Component {
-  componentDidUpdate() {
-    window.scrollTo(0, 0)
-  }
+
   render() {
     return (
       <Fragment>

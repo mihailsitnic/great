@@ -1,42 +1,23 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux'
-import CSSTransition from 'react-addons-css-transition-group'
-import { Link } from "react-router-dom";
 import dataNav from './data'
+import { Link, withRouter } from "react-router-dom";
+import CSSTransition from 'react-addons-css-transition-group';
 import './styles.css';
 
-class Sidebar extends Component {
+const Sidebar = props => {
+  
+  const locationPath = props.location.pathname.split('/')[2]
+  const tag = props.location.pathname.split('/')[1]
+  const value = props.data[tag]
 
-  renderNavList = () => {
-    let id
-    switch (this.props.path) {
-      case "a":
-        id = 0;
-        break;
-      case "b":
-        id = 1;
-        break;
-      case "c":
-        id = 2;
-        break;
-      case "d":
-        id = 3;
-        break;
-      default:
-        id = 0;
-    }
-    const meet = this.props.data;
-    const key = Object.keys(meet)[id];
-    const value = meet[key]
-    const tag = value.selector;
-    const path = `/${this.props.path}/`;
-
+  const renderNavList = () => {
     const dataNavList = dataNav
     .filter(x => x.tags.indexOf(tag || tag.filter) > -1)
     .map(item =>
         <li className="list__li" key={item.id}>
           <Link
-            className={`list__link ${path + item.path === this.props.location ? 'list__link--active' : ''}`}
+            className={`list__link ${item.path === locationPath ? 'list__link--active' : ''}`}
             to={item.path}>
             {item.text}
           </Link>
@@ -50,30 +31,8 @@ class Sidebar extends Component {
     )
   }
 
-  render() {
-    let id
-    switch (this.props.path) {
-      case "a":
-        id = 0;
-        break;
-      case "b":
-        id = 1;
-        break;
-      case "c":
-        id = 2;
-        break;
-      case "d":
-        id = 3;
-        break;
-      default:
-        id = 0;
-    }
-    const meet = this.props.data;
-    const key = Object.keys(meet)[id];
-    const value = meet[key]
-    const logoName = value.author
-    return (
-      <Fragment>
+  return (
+    <Fragment>
         <CSSTransition
           transitionName = "article"
           transitionAppear
@@ -83,19 +42,16 @@ class Sidebar extends Component {
           component = "div"
         >
         <nav>
-          <h3 className="logo">{logoName}</h3>
-          {this.renderNavList()}
+          <h3 className="logo">{value.author}</h3>
+          {renderNavList()}
         </nav>
       </CSSTransition>
       </Fragment>
-    );
-  }
-}
+  );
+};
 
 const mapStateToProps = state => ({
-  path: state.currentPath,
-  location: state.currentLocation,
-  data: state.selectorData,
+  data: state.selectorData
 })
 
-export default connect(mapStateToProps)(Sidebar)
+export default connect(mapStateToProps)(withRouter(Sidebar))

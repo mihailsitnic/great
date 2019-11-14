@@ -1,18 +1,5 @@
-import { MATCH_PATH, LOCATION_PATH, SELECTOR, DATA } from '../constants'
+import { SELECTOR, DATA, AUDIO_PAGE } from '../constants'
 
-export function matchPath(id) {
-    return {
-        type: MATCH_PATH,
-        payload: id
-    }
-}
-
-export function locationPath(id) {
-    return {
-        type: LOCATION_PATH,
-        payload: id
-    }
-}
 
 export function selectorName(id) {
     return {
@@ -24,5 +11,12 @@ export function selectorName(id) {
 export function selectorData() {
     return {
         type: DATA
+    }
+}
+
+export function audioPage(id) {
+    return {
+        type: AUDIO_PAGE,
+        payload: id
     }
 }

@@ -3,31 +3,31 @@ const dataNav = [
     id: 1,
     path: 'meet',
     text: 'Знакомство',
-    tags: ['alexandermen', 'seneca', 'from', 'ted']
+    tags: ['a', 'b', 'c', 'd']
   },
   {
     id: 2,
     path: 'video',
     text: 'Видео',
-    tags: ['alexandermen', 'seneca', 'from', 'ted']
+    tags: ['a', 'd']
   },
   {
     id: 3,
-    path: 'audio',
+    path: 'audio/1',
     text: 'Аудио',
-    tags: ['alexandermen', 'seneca', 'from']
+    tags: ['a', 'b', 'c']
   },
   {
     id: 4,
     path: 'books',
     text: 'Книги',
-    tags: ['alexandermen', 'seneca', 'from']
+    tags: ['a', 'c']
   },
   {
     id: 5,
     path: '/',
     text: 'Выйти',
-    tags: ['alexandermen', 'seneca', 'from', 'ted']
+    tags: ['a', 'b', 'c', 'd']
   }
 ]
 
