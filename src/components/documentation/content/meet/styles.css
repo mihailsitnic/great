@@ -19,3 +19,9 @@
 .blockquote p::after {
     content: '\201D';
 }
+
+@media (max-width: 576px) {
+    .paper {
+        padding: 20px 0;
+    }
+}

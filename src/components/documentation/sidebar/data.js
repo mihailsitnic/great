@@ -13,7 +13,7 @@ const dataNav = [
   },
   {
     id: 3,
-    path: 'audio/1',
+    path: 'audio',
     text: 'Аудио',
     tags: ['a', 'b', 'c']
   },
@@ -21,7 +21,7 @@ const dataNav = [
     id: 4,
     path: 'books',
     text: 'Книги',
-    tags: ['a', 'c']
+    tags: ['a', 'b', 'c']
   },
   {
     id: 5,

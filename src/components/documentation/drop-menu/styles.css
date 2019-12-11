@@ -1,0 +1,77 @@
+.drop-menu {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    z-index: 999;
+}
+
+.menu-btn {
+    position: relative;
+    width: 30px;
+    height: 24px;
+    float: right;
+    cursor: pointer;
+    transition: margin-top .3s ease;
+    display: none;
+}
+  
+.menu-btn:before,
+.menu-btn:after {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 3px;
+    content: '';
+    width: 100%;
+    transform-origin: 50% 50%;
+    transition: transform 0.25s;
+}
+  
+.menu-btn .menu-line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 75%;
+    height: 3px;
+    overflow: hidden;
+    transition: opacity 0.25s;
+}
+  
+.menu-btn:before,
+.menu-btn:after,
+.menu-btn .menu-line {
+    background: #444;
+}
+  
+.menu-btn:before {
+    transform: translate3d(0, -10px, 0);
+    -webkit-transform: translate3d(0, -10px, 0);
+}
+  
+.menu-btn:after {
+    transform: translate3d(0, 10px, 0);
+    -webkit-transform: translate3d(0, 10px, 0);
+}
+  
+  /* Anim */
+  
+.menu-btn.clicked:before {
+    transform: rotate3d(0, 0, 1, 45deg);
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+}
+  
+.menu-btn.clicked:after {
+    transform: rotate3d(0, 0, 1, -45deg);
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+}
+  
+.menu-btn.clicked .menu-line {
+    opacity: 0;
+}
+
+
+@media (max-width: 576px) {
+    .menu-btn  {
+        display: block;
+    }
+}

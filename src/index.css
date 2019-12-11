@@ -130,11 +130,28 @@ code {
 }
 
 .title-h4 {
-  font-family: 'GothamPro';
+  font-family: 'GothamPro-Bold';
   font-size: 20px;
   color: #333;
   line-height: 1.5;
   padding-bottom: 15px;
+}
+
+.video-description {
+  list-style: none;
+  padding-top: 1em;
+}
+
+.video-description__li {
+  font-family: 'GothamPro';
+  line-height: 2;
+  padding-bottom: 2em;
+  list-style: none;
+}
+
+.video-description__li:last-child {
+  line-height: 2;
+  padding-bottom: 0;
 }
 
 .article {
@@ -177,4 +194,38 @@ code {
   font-size: 18px;
   font-weight: 500;
   line-height: 30px;
+}
+
+@media (max-width: 1200px) {
+  .col-3 {
+    flex: 0 0 40%;
+  }
+}
+
+@media (max-width: 992px) {
+  .article {
+      max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-3 {
+    flex: 0 0 60%;
+  }
+  .article {
+    max-width: 100%;
+}
+}
+
+@media (max-width: 576px) {
+  p {
+    font-size: 15px;
+  }
+  .col-3,
+  .col-9 {
+    flex: 0 0 100%;
+  }
+  .title-h3 {
+    line-height: 1.5;
+  }
 }

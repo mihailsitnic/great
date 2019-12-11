@@ -1,4 +1,4 @@
-import { SELECTOR, DATA, AUDIO_PAGE } from '../constants'
+import { SELECTOR, DATA, AUDIO_PAGE, MOBILE_MENU } from '../constants'
 
 
 export function selectorName(id) {
@@ -18,5 +18,11 @@ export function audioPage(id) {
     return {
         type: AUDIO_PAGE,
         payload: id
+    }
+}
+
+export function toggleMenu() {
+    return {
+        type: MOBILE_MENU
     }
 }

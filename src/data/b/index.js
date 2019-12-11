@@ -1,4 +1,5 @@
 import meet from './meet'
+import books from './books'
 import player1 from './audio/player1'
 
 const bData = {
@@ -6,6 +7,7 @@ const bData = {
     author: 'Луций Анней Сенека',
     selector: 'seneca',
     meet: meet,
+    books: books,
     audio: [
         {
             id: 1,

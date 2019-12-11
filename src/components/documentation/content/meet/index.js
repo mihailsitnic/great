@@ -6,7 +6,7 @@ import './styles.css';
 class Meet extends Component {
   
   render() {
-    const value = this.props.data[this.props.match.params.path]
+    const currentData = this.props.data[this.props.match.params.path]
 
     return (
       <Fragment>
@@ -29,17 +29,15 @@ class Meet extends Component {
             <article className="article">
               <blockquote
                 className="blockquote"
-                cite={value.meet.blockquoteUrl}
+                cite={currentData.meet.blockquoteUrl}
               >
-                <p
-                  className="blockquote__p">
-                    {value.meet.blockquoteParagraph}
+                <p className="blockquote__p">
+                    {currentData.meet.blockquoteParagraph}
                   </p>
-                <footer
-                  className="blockquote__footer">
-                    {value.meet.blockquoteFooter}
+                <footer className="blockquote__footer">
+                    {currentData.meet.blockquoteFooter}
                     <cite className="blockquote__cite">
-                      {value.meet.blockquoteCite}
+                      {currentData.meet.blockquoteCite}
                     </cite>
                   </footer>
             </blockquote>

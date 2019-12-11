@@ -37,6 +37,10 @@
     border-bottom: 1px solid #ebf0f2;
 }
 
+.styles_playlistTrack__2jzCn:last-child {
+    border-bottom: 0;
+}
+
 .styles_playlistTrack__2jzCn:hover {
     background: #fff !important;
     color: #4285f4;

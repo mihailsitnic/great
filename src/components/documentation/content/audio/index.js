@@ -6,7 +6,7 @@ import Pagination from '../pagination';
 import './styles.css';
 
 const Audio = props => {
-  const value = props.data[props.match.params.path]
+  const currentData = props.data[props.match.params.path]
 
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -16,7 +16,7 @@ const Audio = props => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      setPosts(value.audio);
+      setPosts(currentData.audio);
       setLoading(false);
     };
 
@@ -59,7 +59,6 @@ const Audio = props => {
           totalPosts={posts.length}
           paginate={paginate}
           currentPage={currentPage}
-          path={props.match.path}
         />
       </section>
       </CSSTransition>

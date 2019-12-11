@@ -20,6 +20,7 @@ const globalObject = {
         selector: bData.selector,
         meet: bData.meet,
         audio: bData.audio,
+        books: bData.books
     },
     c: {
         id: cData.id,
@@ -34,6 +35,7 @@ const globalObject = {
         author: dData.author,
         selector: dData.selector,
         meet: dData.meet,
+        video: dData.video
     },
 }
 
