@@ -175,4 +175,4 @@ const video = [
     },
 ]
 
-export default video;
+export default video

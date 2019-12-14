@@ -17,4 +17,4 @@ const bData = {
     ]
 }
 
-export default bData;
+export default bData

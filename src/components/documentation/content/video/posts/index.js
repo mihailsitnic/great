@@ -1,12 +1,21 @@
-import React from 'react';
+import React from 'react'
+import CSSTransition from 'react-addons-css-transition-group'
 
 const Posts = ({ posts, loading }) => {
   if (loading) {
-    return <h2 className="title-h2">Loading...</h2>;
+    return <h2 className="title-h2">Loading...</h2>
   }
 
   return (
     <ul className='video__list'>
+      <CSSTransition
+        transitionName = "article"
+        transitionAppear
+        transitionEnterTimeout = {500}
+        transitionLeaveTimeout = {500}
+        transitionAppearTimeout = {500}
+        component = "div"
+      >
       {posts.map(item => {
         if (item.tag === 'youtube') {
           return (
@@ -46,8 +55,9 @@ const Posts = ({ posts, loading }) => {
         }
         return <div />
       })}
+      </CSSTransition>
     </ul>
-  );
-};
+  )
+}
 
-export default Posts;
+export default Posts

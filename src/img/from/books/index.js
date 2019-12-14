@@ -76,6 +76,6 @@ const img = {
   img37
 }
 
-export default img;
+export default img
 
 

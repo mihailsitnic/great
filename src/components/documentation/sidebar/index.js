@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react';
-import { Link, withRouter } from "react-router-dom";
-import CSSTransition from 'react-addons-css-transition-group';
+import React, { Component, Fragment } from 'react'
+import { Link, withRouter } from "react-router-dom"
+import CSSTransition from 'react-addons-css-transition-group'
 import dataNav from './data'
-import './styles.css';
+import './styles.css'
 
 class Sidebar extends Component {
 
@@ -59,8 +59,8 @@ class Sidebar extends Component {
           </nav>
         </CSSTransition>
         </Fragment>
-    );
-  };
+    )
+  }
 }
 
 export default withRouter(Sidebar)

@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import React, { Component, Fragment } from 'react'
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom"
 import { connect } from 'react-redux'
 import Home from './components/home'
 import Meet from './components/documentation/content/meet'
@@ -9,7 +9,7 @@ import Books from './components/documentation/content/books'
 import Audio from './components/documentation/content/audio'
 import Page404 from './components/home/404'
 import DropMenu from './components/documentation/drop-menu'
-import './App.css';
+import './App.css'
 
 class App extends Component {
 
@@ -41,7 +41,7 @@ class App extends Component {
             </Switch>
         </Router>
       </Fragment>
-    );
+    )
   }
 }
 

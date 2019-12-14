@@ -38,7 +38,7 @@ const nav = [
         id: 3,
         switch: 'd',
         img: navImg.img04,
-        linkTitle: 'Think about it',
+        linkTitle: 'Идеи',
         text: 'Миссия состоит в распространении прекрасных уникальных идей.',
         tags: '#Идеи',
         linkText: 'Ссылка',

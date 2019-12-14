@@ -132,6 +132,6 @@ const img = {
   img65,
 }
 
-export default img;
+export default img
 
 

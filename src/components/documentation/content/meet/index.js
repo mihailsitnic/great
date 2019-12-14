@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from 'react'
 import CSSTransition from 'react-addons-css-transition-group'
 import { connect } from 'react-redux'
-import './styles.css';
+import './styles.css'
 
 class Meet extends Component {
   
@@ -47,7 +47,7 @@ class Meet extends Component {
         </div>
         </CSSTransition>
       </Fragment>
-    );
+    )
   }
 }
 

@@ -5,4 +5,4 @@ const meet = {
     blockquoteCite: 'Из письма к Ю.Н. Рейтлингер'
 }
 
-export default meet;
+export default meet

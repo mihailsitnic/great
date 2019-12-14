@@ -1,9 +1,9 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect, Fragment } from 'react'
 import { connect } from 'react-redux'
-import CSSTransition from 'react-addons-css-transition-group';
-import Posts from './posts';
-import Pagination from '../pagination';
-import './styles.css';
+import CSSTransition from 'react-addons-css-transition-group'
+import Posts from './posts'
+import Pagination from '../pagination'
+import './styles.css'
 
 const Books = props => {
 
@@ -11,29 +11,29 @@ const Books = props => {
   const currentData = props.data[props.match.params.path]
 
   // Pagination
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage] = useState(10)
 
   // Loading books
   useEffect(() => {
     const fetchPosts = async () => {
-      setLoading(true);
-      setPosts(currentData.books);
-      setLoading(false);
-    };
+      setLoading(true)
+      setPosts(currentData.books)
+      setLoading(false)
+    }
 
-    fetchPosts();
-  }, []);
+    fetchPosts()
+  }, [])
 
   // Get current posts
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const indexOfLastPost = currentPage * postsPerPage
+  const indexOfFirstPost = indexOfLastPost - postsPerPage
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
 
   // Change page
-  const paginate = pageNumber => setCurrentPage(pageNumber);
+  const paginate = pageNumber => setCurrentPage(pageNumber)
 
   return (
     <Fragment>
@@ -68,8 +68,8 @@ const Books = props => {
       </CSSTransition>
       
     </Fragment>
-  );
-};
+  )
+}
 
 const mapStateToProps = state => ({
   data: state.selectorData

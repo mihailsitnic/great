@@ -9,4 +9,4 @@ const dData = {
     video: video
 }
 
-export default dData;
+export default dData

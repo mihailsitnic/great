@@ -5,4 +5,4 @@ const meet = {
     blockquoteCite: 'Нравственные письма к луцилию, письмо 79'
 }
 
-export default meet;
+export default meet

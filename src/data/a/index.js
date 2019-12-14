@@ -25,4 +25,4 @@ const aData = {
     ]
 }
 
-export default aData;
+export default aData

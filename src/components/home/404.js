@@ -1,5 +1,5 @@
-import React from 'react';
-import { Redirect, Link } from "react-router-dom";
+import React from 'react'
+import { Redirect, Link } from "react-router-dom"
 
 const Page404 = () => {
     return (
@@ -11,4 +11,4 @@ const Page404 = () => {
     )
 }
 
-export default Page404;
+export default Page404

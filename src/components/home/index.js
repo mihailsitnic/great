@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { selectorName } from 'redux/AC'
 import nav from './dataNav'
-import './styles.css';
+import './styles.css'
 
 class Home extends Component {
   state = {
@@ -18,26 +18,31 @@ class Home extends Component {
       li: true
     })
   }
+
   handleLiOut = () => {
     this.setState({
       selected: null
     })
   }
+
   handleUlOver = () => {
     this.setState({
       ul: true
     })
   }
+
   handleUlLeave = () => {
     this.setState({
       ul: false,
       li: false
     })
   }
+
   handleSelector = item => {
     const action = selectorName(item.linkTitle)
     this.props.dispatch(action)
   }
+
   render() {
     const {ul, li} = this.state
     const nomeNavigation = nav.map((item, id) =>
@@ -117,8 +122,9 @@ class Home extends Component {
             </div>
 
         </div>
+        <p className="artist">Художник - Ferhat Edizkan</p>
       </section>
-    );
+    )
   }
 }
 

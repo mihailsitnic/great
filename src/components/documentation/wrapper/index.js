@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from "react-router-dom";
-import { withRouter } from "react-router-dom";
+import { Redirect } from "react-router-dom"
+import { withRouter } from "react-router-dom"
 import Sidebar from '../sidebar'
 
 class Wrapper extends Component {

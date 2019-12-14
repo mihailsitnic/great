@@ -35,4 +35,4 @@ const cData = {
     ]
 }
 
-export default cData;
+export default cData

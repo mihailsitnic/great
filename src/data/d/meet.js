@@ -5,4 +5,4 @@ const meet = {
     blockquoteCite: 'Стальные пещеры'
 }
 
-export default meet;
+export default meet

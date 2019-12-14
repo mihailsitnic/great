@@ -24,17 +24,22 @@
     content: '';
     width: 100%;
     transform-origin: 50% 50%;
-    transition: transform 0.25s;
+    transition: transform .25s;
 }
   
-.menu-btn .menu-line {
+.menu-line {
     position: absolute;
     left: 0;
     top: 50%;
     width: 75%;
     height: 3px;
     overflow: hidden;
-    transition: opacity 0.25s;
+    transition: opacity .25s, width .30s;
+}
+
+.menu-btn:hover .menu-line {
+    width: 100%;
+    transition: width .30s;
 }
   
 .menu-btn:before,

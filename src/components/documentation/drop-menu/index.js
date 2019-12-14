@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { toggleMenu } from 'redux/AC'
 import './styles.css'
@@ -20,7 +20,7 @@ class DropMenu extends Component {
                     <span className="menu-line">&nbsp;</span>
                 </div>
             </div>
-        );
+        )
     }
 }
 

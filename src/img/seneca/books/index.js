@@ -32,7 +32,7 @@ import img31 from './31.jpeg'
 import img32 from './32.jpeg'
 import img34 from './34.jpg'
 import img35 from './35.jpeg'
-import img36 from './36.jpeg'
+import img36 from './36.jpg'
 
 const img = {
   img01,
@@ -72,6 +72,6 @@ const img = {
   img36
 }
 
-export default img;
+export default img
 
 
