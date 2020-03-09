@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { selectorName } from 'redux/AC'
+import { selectorName } from '../../redux/AC'
 import nav from './dataNav'
 import './styles.css'
 
@@ -69,13 +69,6 @@ class Home extends Component {
         <div className="home-nav__details">
           <p className="home-nav__text">{item.text}</p>
           <p className="home-nav__tags">{item.tags}</p>
-          <Link
-            onClick={() => this.handleSelector(item)}
-            className="home-nav__link"
-            to={item.linkTo}
-          >
-            {item.linkText}
-          </Link>
         </div>
       </li>
     )
@@ -91,7 +84,7 @@ class Home extends Component {
           <div className="row">
             <div className="col-3">
               <p>В свое время Бейли читал об этом. Он слышал, как многие выражали недовольство изобретением атомного реактора. Он и сам сетовал на это, когда уставал или когда что-то не ладилось. Человек всегда чем-то недоволен. В угольном веке люди ворчали по поводу изобретения парового двигателя. В одной из пьес Шекспира герой возмущался тем, что кто-то изобрел порох. А через тысячу лет найдутся такие, что будут недовольны изобретением позитронного мозга.</p>
-              <p>– Если вы имеете хоть какое-то представление о роботехнике, мистер Бейли, то должны знать, какую гигантскую работу нужно проделать математикам и электронщикам, чтобы создать позитронный мозг.</p>
+              <p id="scroll">– Если вы имеете хоть какое-то представление о роботехнике, мистер Бейли, то должны знать, какую гигантскую работу нужно проделать математикам и электронщикам, чтобы создать позитронный мозг.</p>
             </div>
           </div>
           

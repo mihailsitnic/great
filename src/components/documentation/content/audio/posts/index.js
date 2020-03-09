@@ -1,6 +1,7 @@
 import React from 'react'
 import Player from '../player'
 import CSSTransition from 'react-addons-css-transition-group'
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Posts = ({ posts, loading }) => {
   if (loading) {
@@ -8,7 +9,7 @@ const Posts = ({ posts, loading }) => {
   }
 
   return (
-    <ul className='audio__list'>
+    <ul className='audio__list' id="top">
       <CSSTransition
         transitionName = "article"
         transitionAppear
@@ -20,10 +21,12 @@ const Posts = ({ posts, loading }) => {
       {posts.map(item => (
         <li key={item.id} className="audio__li">
             <h3 className="title-h3">{item.title}</h3>
-            <Player
-              tracks={item.player}
-              key={item.id}
-            />
+            <Link to="#top" className="audio__link">
+              <Player
+                tracks={item.player}
+                key={item.id}
+              />
+            </Link>
         </li>
       ))}
       </CSSTransition>

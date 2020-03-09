@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import { Link, withRouter } from "react-router-dom"
+import { withRouter } from "react-router-dom"
+import { HashLink as Link } from 'react-router-hash-link';
 import CSSTransition from 'react-addons-css-transition-group'
 import dataNav from './data'
 import './styles.css'

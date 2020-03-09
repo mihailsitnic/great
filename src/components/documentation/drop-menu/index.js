@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { toggleMenu } from 'redux/AC'
+import { toggleMenu } from '../../../redux/AC'
 import './styles.css'
 
 class DropMenu extends Component {

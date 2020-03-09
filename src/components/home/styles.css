@@ -85,21 +85,6 @@
   opacity: 0;
 }
 
-.home-nav__link {
-  color: #333;
-  font-size: 12px;
-  text-decoration: none;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-weight: 700;
-  font-family: 'GothamPro-Bold';
-  color: #4285f4;
-}
-
-.home-nav__link:hover {
-  text-decoration: underline;
-}
-
 .home-nav__li:last-child .home-nav__details {
   width: 300px;
   float: right;

@@ -25,7 +25,7 @@ const dataNav = [
   },
   {
     id: 5,
-    path: '/',
+    path: '/#scroll',
     text: 'Выйти',
     tags: ['a', 'b', 'c', 'd']
   }

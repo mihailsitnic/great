@@ -1,4 +1,4 @@
-import img from 'img/seneca/books'
+import img from '../../img/seneca/books'
 
 const books = [
     {

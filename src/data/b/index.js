@@ -11,7 +11,7 @@ const bData = {
     audio: [
         {
             id: 1,
-            title: 'Нравственные письма к луцилию',
+            title: 'Нравственные письма к Луцилию',
             player: player1,
         }
     ]

@@ -1,4 +1,4 @@
-import img from 'img/from/books'
+import img from '../../img/from/books'
 
 const books = [
     {

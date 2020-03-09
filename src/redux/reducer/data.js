@@ -1,8 +1,8 @@
 import { DATA } from '../constants'
-import aData from 'data/a'
-import bData from 'data/b'
-import cData from 'data/c'
-import dData from 'data/d'
+import aData from '../../data/a'
+import bData from '../../data/b'
+import cData from '../../data/c'
+import dData from '../../data/d'
 
 const globalObject = {
     a: {

@@ -1,19 +1,8 @@
-import navImg from 'img/home-nav'
+import navImg from '../../img/home-nav'
 
 const nav = [
     {
         id: 0,
-        switch: 'a',
-        img: navImg.img01,
-        linkTitle: 'Александр Мень',
-        text: 'Алекса́ндр Влади́мирович Мень — протоиерей Русской православной церкви, богослов, проповедник, автор книг по богословию, истории христианства и других религий, по основам христианского вероучения, православному богослужению.',
-        tags: '#Христианство',
-        linkText: 'Ссылка',
-        linkTo: '/a/meet',
-        selector: 'alexandermen'
-    },
-    {
-        id: 1,
         switch: 'b',
         img: navImg.img02,
         linkTitle: 'Луций Анней Сенека',
@@ -24,7 +13,7 @@ const nav = [
         selector: 'seneca'
     },
     {
-        id: 2,
+        id: 1,
         switch: 'c',
         img: navImg.img03,
         linkTitle: 'Эрих Фромм',
@@ -35,11 +24,22 @@ const nav = [
         selector: 'from'
     },
     {
+        id: 2,
+        switch: 'a',
+        img: navImg.img01,
+        linkTitle: 'Александр Мень',
+        text: 'Алекса́ндр Влади́мирович Мень — протоиерей Русской православной церкви, богослов, проповедник, автор книг по богословию, истории христианства и других религий, по основам христианского вероучения, православному богослужению.',
+        tags: '#Религия',
+        linkText: 'Ссылка',
+        linkTo: '/a/meet',
+        selector: 'alexandermen'
+    },
+    {
         id: 3,
         switch: 'd',
         img: navImg.img04,
         linkTitle: 'Идеи',
-        text: 'Миссия состоит в распространении прекрасных уникальных идей.',
+        text: 'Цель состоит в распространении прекрасных уникальных идей.',
         tags: '#Идеи',
         linkText: 'Ссылка',
         linkTo: '/d/meet',

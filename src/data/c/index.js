@@ -2,7 +2,6 @@ import meet from './meet'
 import player1 from './audio/player1'
 import player2 from './audio/player2'
 import player3 from './audio/player3'
-import player4 from './audio/player4'
 import books from './books'
 
 const cData = {
@@ -26,11 +25,6 @@ const cData = {
             id: 3,
             title: 'Бегство от свободы',
             player: player3,
-        },
-        {
-            id: 4,
-            title: 'Sonny',
-            player: player4
         }
     ]
 }
