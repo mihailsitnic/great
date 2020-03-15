@@ -20,6 +20,34 @@
     content: '\201D';
 }
 
+.go {
+    background: #edeff0;
+    padding: 15px;
+    margin: 0 0 30px 0;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: .7;
+    float: right;
+    transition: opacity 0.2s ease;
+}
+
+.go img {
+    width: 15px;
+    margin-left: 15px;
+    opacity: .7;
+    transition: opacity 0.2s ease;
+}
+
+.go:hover,
+.go:hover img {
+    opacity: .9;
+}
+
 @media (max-width: 576px) {
     .paper {
         padding: 20px 0;

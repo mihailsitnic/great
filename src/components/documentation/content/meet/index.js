@@ -1,9 +1,16 @@
 import React, { Component, Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import CSSTransition from 'react-addons-css-transition-group'
 import { connect } from 'react-redux'
+import icons from '../../../../img/icons'
 import './styles.css'
 
 class Meet extends Component {
+
+  renderLink = () => {
+    const path = this.props.match.params.path;
+    return path === 'a' || path === 'd' ? <Link className="go" to={`/${path}/video/1`}>Вперёд<img src={icons.arrowRight} alt="img"/></Link> : <Link className="go" to={`/${path}/audio/1`}>Вперёд<img src={icons.arrowRight} alt="img"/></Link>
+  }
   
   render() {
     const currentData = this.props.data[this.props.match.params.path]
@@ -33,15 +40,17 @@ class Meet extends Component {
               >
                 <p className="blockquote__p">
                     {currentData.meet.blockquoteParagraph}
-                  </p>
+                </p>
                 <footer className="blockquote__footer">
                     {currentData.meet.blockquoteFooter}
                     <cite className="blockquote__cite">
                       {currentData.meet.blockquoteCite}
                     </cite>
                   </footer>
-            </blockquote>
+              </blockquote>
+              {this.renderLink()}
             </article>
+            
           </div>
         </section>
         </div>
