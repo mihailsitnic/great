@@ -1,27 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { toggleMenu } from '../../../redux/AC'
 import './styles.css'
 
-class DropMenu extends Component {
-    handleClick = () => {
+function DropMenu(props) {
+    const handleClick = () => {
         const action = toggleMenu()
-        this.props.dispatch(action)
+        props.dispatch(action)
     }
 
-    render() {
-        const { toggle } = this.props
-        return (
-            <div className="drop-menu">
-                <div
-                    onClick={this.handleClick}
-                    className={`menu-btn ${toggle ? 'clicked' : ''}`}
-                >
-                    <span className="menu-line">&nbsp;</span>
-                </div>
+    const { toggle } = props
+    return (
+        <div className="drop-menu">
+            <div
+                onClick={handleClick}
+                className={`menu-btn ${toggle ? 'clicked' : ''}`}
+            >
+                <span className="menu-line">&nbsp;</span>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 const mapStateToProps = state => ({

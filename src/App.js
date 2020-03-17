@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom"
 import { connect } from 'react-redux'
 import Home from './components/home'
@@ -11,10 +11,10 @@ import Page404 from './components/home/404'
 import DropMenu from './components/documentation/drop-menu'
 import './App.css'
 
-class App extends Component {
+function App(state) {
 
-  render() {
-    const { toggle } = this.props
+  const { toggle } = state
+
     return (
       <Fragment>
         <Router>
@@ -42,7 +42,6 @@ class App extends Component {
         </Router>
       </Fragment>
     )
-  }
 }
 
 const mapStateToProps = state => ({
