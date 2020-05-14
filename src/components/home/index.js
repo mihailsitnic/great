@@ -41,24 +41,24 @@ function Home(props) {
       onMouseLeave={() => handleLiOut(item)}
       key={item.id}
       >
-      <div className="home-nav__container">
-        <img
-          className="home-nav__img"
-          src={item.img}
-          alt={item.linkTitle}
-        />
-      </div>
       <Link
         onClick={() => handleSelector(item)}
-        className="home-nav__link-title"
         to={item.linkTo}
+        className="home-nav__link"
       >
-        {item.linkTitle}
-        </Link>
-      <div className="home-nav__details">
-        <p className="home-nav__text">{item.text}</p>
-        <p className="home-nav__tags">{item.tags}</p>
-      </div>
+        <div className="home-nav__container">
+          <img
+            className="home-nav__img"
+            src={item.img}
+            alt={item.linkTitle}
+          />
+        </div>
+          <p className="home-nav__link-title">{item.linkTitle}</p>
+        <div className="home-nav__details">
+          <p className="home-nav__text">{item.text}</p>
+          <p className="home-nav__tags">{item.tags}</p>
+        </div>
+      </Link>
     </li>
   )
   return (

@@ -6,6 +6,7 @@
     "react": "^16.8.4",
     "react-addons-css-transition-group": "^15.6.2",
     "react-audioplaylist": "^1.0.8",
+    "react-burger-menu": "^2.6.13",
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",

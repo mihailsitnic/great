@@ -860,6 +860,12 @@ const video = [
             }
         ]
     },
+    {
+        id: Math.random(),
+        title: 'Михаил Жванецкий. Юбилейный концерт (06.04.2014)',
+        url: '7l--ygDrJ_c',
+        tag: 'youtube'
+    },
 ]
 
 export default video

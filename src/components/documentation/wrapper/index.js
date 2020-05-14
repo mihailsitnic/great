@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from "react-router-dom"
 import { withRouter } from "react-router-dom"
@@ -15,7 +15,7 @@ function Wrapper(props) {
   }
 
   return (
-    <Fragment>
+    <>
       <aside className={`sidenav ${props.toggle ? 'sidenav--active' : ''}`}>
           <Sidebar
             locationPath={locationPath}
@@ -26,7 +26,7 @@ function Wrapper(props) {
       <main className="content">
           {props.children}
       </main>
-  </Fragment>
+  </>
   )
 }
 

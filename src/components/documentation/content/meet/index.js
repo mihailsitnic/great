@@ -1,21 +1,37 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import CSSTransition from 'react-addons-css-transition-group'
 import { connect } from 'react-redux'
+import BurgerMenu from '../../../burger-menu'
 import icons from '../../../../img/icons'
 import './styles.css'
 
 function Meet(props) {
+  const path = props.match.params.path;
 
   const renderLink = () => {
-    const path = props.match.params.path;
-    return path === 'a' || path === 'd' ? <Link className="go" to={`/${path}/video/1`}>Вперёд<img src={icons.arrowRight} alt="img"/></Link> : <Link className="go" to={`/${path}/audio/1`}>Вперёд<img src={icons.arrowRight} alt="img"/></Link>
+    if (path === 'a' || path === 'd') {
+      return (
+        <Link className="go" to={`/${path}/video/1`}>
+          Вперёд
+          <img src={icons.arrowRight} alt="img"/>
+        </Link>
+      )
+    }
+    if (path === 'b' || path === 'c') {
+      return (
+        <Link className="go" to={`/${path}/audio/1`}>
+          Вперёд
+          <img src={icons.arrowRight} alt="img"/>
+        </Link>
+      )
+    }
   }
   
   const currentData = props.data[props.match.params.path]
 
   return (
-    <Fragment>
+    <>
       <CSSTransition
         transitionName = "article"
         transitionAppear
@@ -28,6 +44,7 @@ function Meet(props) {
         <header className="header">
           <div className="wrapper">
             <h1 className="header-title">Знакомство</h1>
+              <BurgerMenu path={path} />
           </div>
         </header>
         <section className="paper">
@@ -54,7 +71,7 @@ function Meet(props) {
       </section>
       </div>
       </CSSTransition>
-    </Fragment>
+    </>
   )
 }
 

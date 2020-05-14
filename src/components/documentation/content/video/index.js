@@ -1,7 +1,8 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import CSSTransition from 'react-addons-css-transition-group'
 import Posts from './posts'
+import BurgerMenu from '../../../burger-menu'
 import Pagination from '../pagination'
 import './styles.css'
 
@@ -32,7 +33,7 @@ const VideoComponent = props => {
   const paginate = pageNumber => setCurrentPage(pageNumber)
 
   return (
-    <Fragment>
+    <>
       <CSSTransition
         transitionName = "article"
         transitionAppear
@@ -45,6 +46,7 @@ const VideoComponent = props => {
         <header className="header">
           <div className="wrapper">
             <h1 className="header-title">Видео</h1>
+            <BurgerMenu path={props.match.params.path} />
           </div>
         </header>
         <section className="paper">
@@ -63,7 +65,7 @@ const VideoComponent = props => {
       </section>
       </CSSTransition>
       
-    </Fragment>
+    </>
   )
 }
 

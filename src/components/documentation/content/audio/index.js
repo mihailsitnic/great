@@ -1,6 +1,7 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import CSSTransition from 'react-addons-css-transition-group'
+import BurgerMenu from '../../../burger-menu'
 import Posts from './posts'
 import Pagination from '../pagination'
 import './styles.css'
@@ -32,7 +33,7 @@ const Audio = props => {
   const paginate = pageNumber => setCurrentPage(pageNumber)
 
   return (
-    <Fragment>
+    <>
       <CSSTransition
         transitionName = "article"
         transitionAppear
@@ -45,6 +46,7 @@ const Audio = props => {
         <header className="header">
           <div className="wrapper">
             <h1 className="header-title">Аудио</h1>
+            <BurgerMenu path={props.match.params.path} />
           </div>
         </header>
         <section className="paper">
@@ -63,7 +65,7 @@ const Audio = props => {
       </section>
       </CSSTransition>
       
-    </Fragment>
+    </>
   )
 }
 
